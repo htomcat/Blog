@@ -11,8 +11,11 @@ var sampleRouter = require('./routes/sample');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
