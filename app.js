@@ -3,6 +3,16 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
+app.get('/', function(req, res){
+	res.type('text/plain');
+	res.send('Sample');
+})
+
+app.get('/about', function(req, res){
+	res.type('text/plain');
+	res.send('About detail');
+});
+
 // custom 404 page
 app.use(function(req, res){
 	res.type('text/plain');
