@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Blog is written in js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htomcat/Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htomcat/Blog/issues"
+  },
+  "homepage": "https://github.com/htomcat/Blog#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
