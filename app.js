@@ -16,6 +16,8 @@ app.get('/about', function(req, res){
 	res.render('about');
 });
 
+// resource
+app.use(express.static(__dirname + '/public'));
 // custom 404 page
 app.use(function(req, res){
 	res.status(404);
