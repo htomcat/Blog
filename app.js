@@ -1,5 +1,6 @@
 var express = require('express');
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
+var detail = require('./lib/detail.js');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -13,7 +14,7 @@ app.get('/', function(req, res){
 })
 
 app.get('/about', function(req, res){
-	res.render('about');
+	res.render('about', { detail: detail.getDetail() } );
 });
 
 // resource
