@@ -9,12 +9,22 @@ app.set('port', process.env.PORT || 3000);
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
+// test
+app.use(function(req, res, next){
+	res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+	next();
+});
+
 app.get('/', function(req, res){
 	res.render('home');
 })
 
 app.get('/about', function(req, res){
-	res.render('about', { detail: detail.getDetail() } );
+	res.render('about', {
+		detail: detail.getDetail(),
+		pageTestScript: 'qa/tests-about.js'
+	
+	} );
 });
 
 // resource
