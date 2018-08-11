@@ -24,6 +24,7 @@
     "chai": "^4.1.2",
     "grunt": "^1.0.3",
     "grunt-cafe-mocha": "^0.1.13",
+    "grunt-contrib-jshint": "^1.1.0",
     "mocha": "^5.2.0",
     "zombie": "^6.1.2"
   }
