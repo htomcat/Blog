@@ -18,7 +18,8 @@
   "homepage": "https://github.com/htomcat/Blog#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "express-handlebars-sections": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
