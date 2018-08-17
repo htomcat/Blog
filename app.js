@@ -1,14 +1,8 @@
 var express = require('express');
 var handlebars = require('express-handlebars').create({ 
     defaultLayout: 'main',
-    helpers: {
-        section: function(name, options){
-            if(!this._sections) this._sections = {};
-            this._sections[name] = options.fn(this);
-            return null;
-        }
-    }
 });
+var handlebars_sections = require('express-handlebars-sections');
 
 var detail = require('./lib/detail.js');
 var app = express();
@@ -16,7 +10,9 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 
 // set up handlebars view engine
+handlebars_sections(handlebars);   // CONFIGURE 'express_handlebars_sections'
 app.engine('handlebars', handlebars.engine);
+
 app.set('view engine', 'handlebars');
 
 // test
