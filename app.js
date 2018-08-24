@@ -3,6 +3,7 @@ var handlebars = require('express-handlebars').create({
     defaultLayout: 'main',
 });
 var handlebars_sections = require('express-handlebars-sections');
+var jqupload = require('jquery-file-upload-middleware');
 
 var detail = require('./lib/detail.js');
 var app = express();
@@ -76,6 +77,18 @@ app.use(express.static(__dirname + '/public'));
 app.use(function(req, res){
 	res.status(404);
 	res.render('404');
+});
+
+app.use('/upload', function(req, res, next){
+    var now = Date.now();
+    jqupload.fileHandler({
+        uploadDir: function(){
+            return __dirname + '/public/uploads/' + now;
+        },
+        uploadUrl: function(){
+            return '/uploads/' + now;
+        },
+    })(req, res, next);
 });
 
 // custom 500 page
