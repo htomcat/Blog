@@ -26,6 +26,9 @@ app.use(function(req, res, next){
 // body parser
 app.use(require('body-parser').urlencoded({ extended: true }));
 
+// setting and accessing cookies.
+app.use(require('cookie-parser')(credentials.cookieSecret));
+
 app.get('/', function(req, res){
 	res.render('home');
 });
