@@ -6,6 +6,7 @@ var handlebars_sections = require('express-handlebars-sections');
 var jqupload = require('jquery-file-upload-middleware');
 
 var detail = require('./lib/detail.js');
+var credentials = require('./credentials.js');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
