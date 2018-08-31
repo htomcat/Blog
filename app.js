@@ -28,6 +28,11 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 
 // setting and accessing cookies.
 app.use(require('cookie-parser')(credentials.cookieSecret));
+app.use(require('express-session')({
+    resave: false,
+    saveUninitialized: false,
+    secret: credentials.cookieSecret,
+}));
 
 app.get('/', function(req, res){
 	res.render('home');
