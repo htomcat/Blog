@@ -119,3 +119,47 @@ app.use(function(err, req, res, next){
 app.listen(app.get('port'), function(){
 	console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
+
+// post
+// slightly modified version of the official W3C HTML5 email regex:
+// https://html.spec.whatwg.org/multipage/forms.html#valid-e-mail-address
+var VALID_EMAIL_REGEX = new RegExp('^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@' +
+        '[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?' +
+        '(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
+Brown, Ethan. Web Development with Node and Express: Leveraging the JavaScript Stack (Kindle Locations 3627-3633). O'Reilly Media. Kindle Edition. 
+app.post('/newsletter', function(req, res){
+    var name = req.body.name || '', email = req.body.email || '';
+    // input validation
+    if(!email.match(VALID_EMAIL_REGEX)) {
+        if(req.xhr) return res.json({ error: 'Invalid name email address.' });
+        req.session.flash = {
+            type: 'danger',
+            intro: 'Validation error!',
+            message: 'The email address you entered was  not valid.',
+        };
+        return res.redirect(303, '/newsletter/archive');
+    }
+    // NewsletterSignup is an example of an object you might create;
+    // since every implementation will vary, it is up to you to write these
+    // project-specific interfaces.  This simply shows how a typical Express
+    // implementation might look in your project.
+    new NewsletterSignup({ name: name, email: email }).save(function(err){
+        if(err) {
+            if(req.xhr) return res.json({ error: 'Database error.' });
+            req.session.flash = {
+                type: 'danger',
+                intro: 'Database error!',
+                message: 'There was a database error; please try again later.',
+            }
+            return res.redirect(303, '/newsletter/archive');
+        }
+if(req.xhr) return res.json({ success: true });
+        req.session.flash = {
+            type: 'success',
+            intro: 'Thank you!',
+            message: 'You have now been signed up for the newsletter.',
+        };
+        return res.redirect(303, '/newsletter/archive');
+    });
+});
+
