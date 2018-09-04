@@ -43,6 +43,7 @@ app.use(function(req, res, next){
         next();
 });
 
+// get
 app.get('/', function(req, res){
 	res.render('home');
 });
@@ -81,6 +82,7 @@ app.get('/newsletter', function(req, res){
     res.render('newsletter', { csrf: 'CSRF token goes here' });
 });
 
+// post
 app.post('/process', function(req, res){
     console.log('Form (from querystring): ' + req.query.form);
     console.log('CSRF token (from hidden form field): ' + req.body._csrf);
@@ -91,6 +93,7 @@ app.post('/process', function(req, res){
 
 // resource
 app.use(express.static(__dirname + '/public'));
+
 // custom 404 page
 app.use(function(req, res){
 	res.status(404);
