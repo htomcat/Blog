@@ -34,6 +34,11 @@ app.use(require('express-session')({
     secret: credentials.cookieSecret,
 }));
 
+app.use(function(req, res, next){
+        console.log('processing request for "' + req.url + '"....');
+        next();
+});
+
 // flash message
 app.use(function(req, res, next){
         // if there's a flash message, transfer
