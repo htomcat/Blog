@@ -39,6 +39,11 @@ app.use(function(req, res, next){
         next();
 });
 
+app.use('/about', function(req, res, next){
+    console.log('test');
+    next();
+});
+
 // flash message
 app.use(function(req, res, next){
         // if there's a flash message, transfer
@@ -134,7 +139,7 @@ app.listen(app.get('port'), function(){
 var VALID_EMAIL_REGEX = new RegExp('^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@' +
         '[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?' +
         '(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
-Brown, Ethan. Web Development with Node and Express: Leveraging the JavaScript Stack (Kindle Locations 3627-3633). O'Reilly Media. Kindle Edition. 
+
 app.post('/newsletter', function(req, res){
     var name = req.body.name || '', email = req.body.email || '';
     // input validation
