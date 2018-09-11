@@ -1,32 +1,181 @@
-{{#section 'head'}}
-    <meta name="robots" content="noindex">
-{{/section}}
+<!-- NAVBAR
+================================================== -->
+<div class="navbar-wrapper">
+<!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+<div class="container">
 
-<h1> Welecom to my page</h1>
-<p>some jQuery stuff.</p>
+<div class="navbar navbar-inverse">
+<div class="navbar-inner">
+<!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="brand" href="#">Project name</a>
+<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li class="active"><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li class="divider"></li>
+<li class="nav-header">Nav header</li>
+<li><a href="#">Separated link</a></li>
+<li><a href="#">One more separated link</a></li>
+</ul>
+</li>
+</ul>
+</div><!--/.nav-collapse -->
+</div><!-- /.navbar-inner -->
+</div><!-- /.navbar -->
 
-{{#section 'jquery'}}
-    <script>
-        $('document').ready(function(){
-            $('h1').html('jQuery Works');
-        });
-    </script>
-{{/section}}
-{{#if flash}}
-        <div class="alert alert-dismissible alert-{{flash.type}}">
-                <button type="button" class="close"
-                data-dismiss="alert" aria-hidden="true">&times;<button>
-                <strong>{{flash.intro}}</strong> {{{flash.message}}}
-        </div>
-{{/if}}
+</div> <!-- /.container -->
+</div><!-- /.navbar-wrapper -->
 
-<form action="/process" method="POST">
-    <input type="hidden" name="hush" val="hidden, but not secret!">
-    <div>
-        <label for="fieldColor">Your favorite color: </label>
-        <input type="text" id="fieldColor" name="color">
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-</form>
+
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+<div class="carousel-inner">
+<div class="item">
+<img src="../assets/img/examples/slide-01.jpg" alt="">
+<div class="container">
+<div class="carousel-caption">
+<h1>Example headline.</h1>
+<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<a class="btn btn-large btn-primary" href="#">Sign up today</a>
+</div>
+</div>
+</div>
+<div class="item active">
+<img src="../assets/img/examples/slide-02.jpg" alt="">
+<div class="container">
+<div class="carousel-caption">
+<h1>Another example headline.</h1>
+<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<a class="btn btn-large btn-primary" href="#">Learn more</a>
+</div>
+</div>
+</div>
+<div class="item">
+<img src="../assets/img/examples/slide-03.jpg" alt="">
+<div class="container">
+<div class="carousel-caption">
+<h1>One more for good measure.</h1>
+<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+</div>
+</div>
+</div>
+</div>
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div><!-- /.carousel -->
+
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+<!-- Three columns of text below the carousel -->
+<div class="row">
+<div class="span4">
+<img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="data:image/png;base64,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">
+<h2>Heading</h2>
+<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+<p><a class="btn" href="#">View details »</a></p>
+</div><!-- /.span4 -->
+<div class="span4">
+<img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/png;base64,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" style="width: 140px; height: 140px;">
+<h2>Heading</h2>
+<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+<p><a class="btn" href="#">View details »</a></p>
+</div><!-- /.span4 -->
+<div class="span4">
+<img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/png;base64,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" style="width: 140px; height: 140px;">
+<h2>Heading</h2>
+<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+<p><a class="btn" href="#">View details »</a></p>
+</div><!-- /.span4 -->
+</div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="featurette">
+<img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-chrome.png">
+<h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="featurette">
+<img class="featurette-image pull-left" src="../assets/img/examples/browser-icon-firefox.png">
+<h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="featurette">
+<img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-safari.png">
+<h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES -->
+
+
+<!-- FOOTER -->
+<footer>
+<p class="pull-right"><a href="#">Back to top</a></p>
+<p>© 2013 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+
+</div><!-- /.container -->
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap-transition.js"></script>
+<script src="../assets/js/bootstrap-alert.js"></script>
+<script src="../assets/js/bootstrap-modal.js"></script>
+<script src="../assets/js/bootstrap-dropdown.js"></script>
+<script src="../assets/js/bootstrap-scrollspy.js"></script>
+<script src="../assets/js/bootstrap-tab.js"></script>
+<script src="../assets/js/bootstrap-tooltip.js"></script>
+<script src="../assets/js/bootstrap-popover.js"></script>
+<script src="../assets/js/bootstrap-button.js"></script>
+<script src="../assets/js/bootstrap-collapse.js"></script>
+<script src="../assets/js/bootstrap-carousel.js"></script>
+<script src="../assets/js/bootstrap-typeahead.js"></script>
+<script>
+!function ($) {
+    $(function(){
+            // carousel demo
+            $('#myCarousel').carousel()
+            })
+}(window.jQuery)
+</script>
+<script src="../assets/js/holder/holder.js"></script>
+
