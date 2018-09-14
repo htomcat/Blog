@@ -58,6 +58,10 @@ app.get('/', function(req, res){
 	res.render('home');
 });
 
+app.get('/detail', function(req, res){
+	res.render('detail');
+});
+
 app.get('/about', function(req, res){
 	res.render('about', {
 		detail: detail.getDetail(),
