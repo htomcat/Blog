@@ -35,9 +35,9 @@
         {{> threecolumns}}
 
         <!-- START THE FEATURETTES -->
-        {{#each featurette}}
+        {{#each featurette as |value|}}
           <hr class="featurette-divider">
-          {{> featurette}}
+          {{> featurette param = value}}
         {{/each}}
 
         <hr class="featurette-divider">

@@ -1,12 +1,9 @@
-<div class="row featurette">
-    <!--
+  <div class="row featurette">
+{{#if param}}
+  <div class="col-md-7">
+{{else}}
   <div class="col-md-7 order-md-2">
-      -->
-  {{#if partials.rightThumbnail}}
-    <div class="col-md-7">
-  {{else}}
-    <div class="col-md-7 order-md-2">
-  {{/if}}
+{{/if}}
     <h2 class="featurette-heading">{{featurette}}First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
   </div>
