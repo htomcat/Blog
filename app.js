@@ -55,7 +55,9 @@ app.use(function(req, res, next){
 
 // get
 app.get('/', function(req, res){
-	res.render('home');
+    res.render('home', {
+        featurette: ['test1', 'test2', 'test3']
+    });
 });
 
 app.get('/detail', function(req, res){
