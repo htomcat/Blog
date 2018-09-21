@@ -65,7 +65,7 @@ app.get('/detail', function(req, res){
 });
 
 app.get('/form', function(req, res){
-    res.render('form');
+    res.render('form', { csrf: 'dummy token'});
 });
 
 app.get('/about', function(req, res){
