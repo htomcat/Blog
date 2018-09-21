@@ -64,6 +64,10 @@ app.get('/detail', function(req, res){
 	res.render('detail');
 });
 
+app.get('/form', function(req, res){
+    res.render('form');
+});
+
 app.get('/about', function(req, res){
 	res.render('about', {
 		detail: detail.getDetail(),
