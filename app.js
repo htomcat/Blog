@@ -44,6 +44,13 @@ app.use('/about', function(req, res, next){
     next();
 });
 
+// csurf
+app.use(require('csurf')());
+app.use(function(req, res, next){
+    res.locals._csrfToken = req.csrfToken();
+    next();
+});
+
 // flash message
 app.use(function(req, res, next){
         // if there's a flash message, transfer
