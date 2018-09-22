@@ -45,7 +45,7 @@ app.use('/about', function(req, res, next){
 });
 
 // csurf
-app.use(require('csurf')());
+app.use(require('csurf')({ cookie: true }));
 app.use(function(req, res, next){
     res.locals._csrfToken = req.csrfToken();
     next();
@@ -72,7 +72,7 @@ app.get('/detail', function(req, res){
 });
 
 app.get('/form', function(req, res){
-    res.render('form', { csrf: 'dummy token'});
+    res.render('form');
 });
 
 app.get('/about', function(req, res){
@@ -101,10 +101,15 @@ app.get('/newsletter', function(req, res){
     res.render('newsletter', { csrf: 'CSRF token goes here' });
 });
 
+app.get('/thank-you', function(req, res){
+    res.render('thank-you');
+});
+
 // post
 app.post('/process', function(req, res){
     console.log('Form (from querystring): ' + req.query.form);
     console.log('CSRF token (from hidden form field): ' + req.body._csrf);
+    console.log(req.csrfToken());
     console.log('Name (from visible form field): ' + req.body.name);
     console.log('Email (from visible form field): ' + req.body.email);
     res.redirect(303, '/thank-you');
