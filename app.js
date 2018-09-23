@@ -51,6 +51,14 @@ app.use(function(req, res, next){
     next();
 });
 
+app.use(function (err, req, res, next) {
+    if (err.code !== 'EBADCSRFTOKEN') return next(err)
+
+    // handle CSRF token errors here
+    res.status(403)
+    res.send('403 forbidden')
+})
+
 // flash message
 app.use(function(req, res, next){
         // if there's a flash message, transfer
