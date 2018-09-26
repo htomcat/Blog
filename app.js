@@ -113,6 +113,10 @@ app.get('/thank-you', function(req, res){
     res.render('thank-you');
 });
 
+app.get('/login', function(req, res){
+    res.render('login');
+});
+
 // post
 app.post('/process', function(req, res){
     console.log('Form (from querystring): ' + req.query.form);
