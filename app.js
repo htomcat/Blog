@@ -23,6 +23,34 @@ app.use(function(req, res, next){
 	next();
 });
 
+// database
+var mongoose = require('mongoose');
+var opts = {
+    useNewUrlParser: true
+};
+switch(app.get('env')){
+    case 'development':
+        mongoose.connect('MONGO_URL', {
+            auth: {
+              user: 'MONGO_DB_USER',
+              password: 'MONGO_DB_PASSWORD'
+            },
+            useNewUrlParser:true
+          })
+        break;
+    case 'production':
+        mongoose.connect('MONGO_URL', {
+            auth: {
+              user: 'MONGO_DB_USER',
+              password: 'MONGO_DB_PASSWORD'
+            },
+            useNewUrlParser:true
+          })
+        break;
+    default:
+        throw new Error('Unknown execution environment: ' + app.get('env'));
+}
+
 // body parser
 app.use(require('body-parser').urlencoded({ extended: true }));
 
