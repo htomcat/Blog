@@ -25,17 +25,14 @@ app.use(function(req, res, next){
 
 // database
 var mongoose = require('mongoose');
-var opts = {
-    useNewUrlParser: true
-};
 switch(app.get('env')){
     case 'development':
-        mongoose.connect('MONGO_URL', {
+        mongoose.connect(credentials.mongo.development.url, {
             auth: {
-              user: 'MONGO_DB_USER',
-              password: 'MONGO_DB_PASSWORD'
+              user: credentials.mongo.development.user,
+              password: credentials.mongo.development.password
             },
-            useNewUrlParser:true
+            useNewUrlParser: true
           })
         break;
     case 'production':
