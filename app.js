@@ -149,6 +149,13 @@ app.post('/process', function(req, res){
     console.log(req.csrfToken());
     console.log('Name (from visible form field): ' + req.body.name);
     console.log('Email (from visible form field): ' + req.body.email);
+    var Article = require('./models/article.js');
+    new Article({
+        id: 1,
+        title: 'dummyTitle',
+        content: 'dummyContent',
+        images: 'dummyURL',
+    }).save();
     res.redirect(303, '/thank-you');
 });
 
