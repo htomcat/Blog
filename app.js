@@ -7,6 +7,7 @@ var jqupload = require('jquery-file-upload-middleware');
 
 var detail = require('./lib/detail.js');
 var credentials = require('./credentials.js');
+var article = require('./models/article.js');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -101,7 +102,19 @@ app.get('/', function(req, res){
 });
 
 app.get('/detail', function(req, res){
-	res.render('detail');
+    article.find({ available: true }, function(err, articles){
+        var articles = {
+            articles: articles.map(function(article){
+                return {
+                    title: article.title,
+                    content: article.content,
+                    images: article.images,
+                }
+            })
+        };
+        console.log(articles);
+	    res.render('detail', articles);
+    });
 });
 
 app.get('/form', function(req, res){
@@ -143,15 +156,13 @@ app.get('/login', function(req, res){
 });
 
 // post
-app.post('/process', function(req, res){
+app.post('/process', function (req, res) {
     console.log('Form (from querystring): ' + req.query.form);
     console.log('CSRF token (from hidden form field): ' + req.body._csrf);
     console.log(req.csrfToken());
     console.log('Name (from visible form field): ' + req.body.name);
     console.log('Email (from visible form field): ' + req.body.email);
-    var Article = require('./models/article.js');
-    new Article({
-        id: 1,
+    new article({
         title: 'dummyTitle',
         content: 'dummyContent',
         images: 'dummyURL',
