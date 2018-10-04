@@ -157,11 +157,6 @@ app.get('/login', function(req, res){
 
 // post
 app.post('/process', function (req, res) {
-    console.log('Form (from querystring): ' + req.query.form);
-    console.log('CSRF token (from hidden form field): ' + req.body._csrf);
-    console.log(req.csrfToken());
-    console.log('Name (from visible form field): ' + req.body.name);
-    console.log('Email (from visible form field): ' + req.body.email);
     new article({
         title: 'dummyTitle',
         content: 'dummyContent',
