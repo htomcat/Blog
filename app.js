@@ -7,7 +7,7 @@ var jqupload = require('jquery-file-upload-middleware');
 
 var detail = require('./lib/detail.js');
 var credentials = require('./credentials.js');
-var article = require('./models/article.js');
+var Article = require('./models/article.js');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -102,8 +102,8 @@ app.get('/', function(req, res){
 });
 
 app.get('/detail', function(req, res){
-    article.find({ available: true }, function(err, articles){
-        var articles = {
+    Article.find({ available: true }, function(err, articles){
+        var data = {
             articles: articles.map(function(article){
                 return {
                     title: article.title,
@@ -112,8 +112,7 @@ app.get('/detail', function(req, res){
                 }
             })
         };
-        console.log(articles);
-	    res.render('detail', articles);
+	    res.render('detail', data);
     });
 });
 
@@ -157,7 +156,7 @@ app.get('/login', function(req, res){
 
 // post
 app.post('/process', function (req, res) {
-    new article({
+    new Article({
         title: 'dummyTitle',
         content: 'dummyContent',
         images: 'dummyURL',

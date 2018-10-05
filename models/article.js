@@ -8,5 +8,5 @@ articleSchema.methods.getDisplayPrice = function(){
     //return '$' + (this.priceInCents / 100).toFixed(2);
     return ''
 };
-var article = mongoose.model('Article', articleSchema);
-module.exports = article;
+var Article = mongoose.model('Article', articleSchema);
+module.exports = Article;
