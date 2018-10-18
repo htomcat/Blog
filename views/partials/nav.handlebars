@@ -1,3 +1,4 @@
+<!--
 <nav class="header-nav">
     <ul class="header-nav-list">
         <li class="header-nav-list">
@@ -11,3 +12,258 @@
         </li>
     </ul>
 </nav>
+-->
+
+      <nav class="utility-nav navbar navbar-expand-lg d-none d-lg-flex">
+    <div class="container">
+      <div class="utility-container ml-auto">
+        <button class="search-toggle" id="searchToggle">
+          <svg class="search-icon">
+            <use xlink:href="#searchIcon"></use>
+          </svg>
+        </button>
+        <div class="header-search-form">
+          <form id="searchForm">
+            <input id="searchText" type="text">
+          </form>
+        </div>
+        <div class="secondary-nav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="">Product Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Company</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="main-nav navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <svg class="logo">
+          <use xlink:href="#logoHorizontal"></use>
+        </svg>
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbar">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/why-docker">Why  Docker?</a>
+          </li>
+          <li class="nav-item dropdown-wrap">
+            <a class="nav-link hub-link" href="/products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<span class="drop-arrow"></span></a>
+            <div class="dropdown-menu products">
+              <div class="dropdown-inner">              
+                  <ul class="submenu">
+                      <li><a class="dropdown-item" href="">
+                      <svg class="products-icon" id="icon-enterprise">
+                        <use xlink:href="#icon-enterprise"></use>
+                      </svg>Docker Enterprise <br>
+                       <span>Enterprise-grade Container Platform</span>
+                        </a>
+                      </li>
+                      <li><a class="dropdown-item" href="">
+                        <svg class="products-icon" id="icon-desktop">
+                          <use xlink:href="#icon-desktop"></use>
+                        </svg>Docker Desktop<br>
+                        <span>Complete Dev Environment</span>
+                        </a>
+                      </li>
+                      <li><a class="dropdown-item" href="">
+                          <svg class="products-icon" id="icon-engine">
+                            <use xlink:href="#icon-engine"></use>
+                          </svg>Docker Engine<br>
+                          <span>Industry-standard Container Engine</span>
+                        </a>  
+                      </li>
+                      <li><a class="dropdown-item" href="">
+                          <svg class="products-icon" id="icon-hub">
+                            <use xlink:href="#icon-hub"></use>
+                          </svg>Docker Hub<br>
+                          <span>Largest Container Content Library</span>
+                         </a> 
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown-wrap">
+            <a class="nav-link link-none" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Solutions<span class="drop-arrow"></span></a>
+            <div class="dropdown-menu solutions">
+              <div class="row">
+                <div class="col-lg-6 dropdown-inner">
+                  <div class="submenu-head" data-mh="submenu-head" style="">
+                    By Use Cases
+                  </div>
+                  <ul class="submenu" data-mh="submenu" style="">
+                    <li><a class="dropdown-item" href="/solutions/mta">
+                      <svg class="list-icon" id="icon-apps">
+                        <use xlink:href="#icon-apps"></use>
+                      </svg>
+                     Traditional Apps</a></li>
+                    <li><a class="dropdown-item" href="/solutions/microservices">
+                      <svg class="list-icon" id="icon-micro">
+                        <use xlink:href="#icon-micro"></use>
+                      </svg>
+                      Microservices
+                    </a></li>
+                    <li><a class="dropdown-item" href="/solutions/cicd">
+                    <svg class="list-icon" id="icon-cicd">
+                        <use xlink:href="#icon-cicd"></use>
+                      </svg>
+                     CI/CD</a></li>
+                    <li><a class="dropdown-item" href="/solutions/data-analytics">
+                      <svg class="list-icon" id="icon-data">
+                        <use xlink:href="#icon-data"></use>
+                      </svg>
+                     Data Science</a></li>
+                    <li><a class="dropdown-item" href="/solutions/docker-edge">
+                      <svg class="list-icon" id="icon-sheild">
+                        <use xlink:href="#icon-sheild"></use>
+                      </svg>
+                     Docker Edge</a></li>
+                    <li><a class="dropdown-item" href="/solutions/cloud-migration">
+                      <svg class="list-icon" id="icon-cloud">
+                        <use xlink:href="#icon-cloud"></use>
+                      </svg>
+                     Cloud Migration</a></li>
+                    <li><a class="dropdown-item" href="/solutions/digital-transformation">
+                     <svg class="list-icon" id="icon-transform">
+                        <use xlink:href="#icon-transform"></use>
+                      </svg>
+                     Digital Transformation</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 dropdown-inner">
+                  <div class="submenu-head" data-mh="submenu-head" style="">
+                    By Industry
+                  </div>
+                  <ul class="submenu" data-mh="submenu" style="">
+                    <li><a class="dropdown-item" href="/solutions/government">
+                     <svg class="list-icon" id="icon-case">
+                        <use xlink:href="#icon-case"></use>
+                      </svg>
+                     Government</a></li>
+                    <li><a class="dropdown-item" href="/solutions/higher-education">
+                     <svg class="list-icon" id="icon-edu">
+                        <use xlink:href="#icon-edu"></use>
+                      </svg>
+                     Higher Education</a></li>
+                    <li><a class="dropdown-item" href="/solutions/financial-services">
+                     <svg class="list-icon" id="icon-dollar">
+                        <use xlink:href="#icon-dollar"></use>
+                      </svg>
+                     Financial Services</a></li>
+                    <li><a class="dropdown-item" href="/solutions/insurance">
+                     <svg class="list-icon" id="icon-life-ring">
+                        <use xlink:href="#icon-life-ring"></use>
+                      </svg>
+                      Insurance</a></li>
+                    <li><a class="dropdown-item" href="/solutions/healthcare-pharma">
+                     <svg class="list-icon" id="icon-heart">
+                        <use xlink:href="#icon-heart"></use>
+                      </svg>
+                     Healthcare/Pharma</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/customers">Customers</a>
+          </li>
+          <li class="nav-item dropdown-wrap">
+            <a class="nav-link link-none" href="/resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources<span class="drop-arrow"></span></a>
+            <div class="dropdown-menu">
+              <div class="dropdown-inner"> 
+                <ul class="submenu">
+                  <li><a class="dropdown-item" href="/resources">
+                      <svg class="list-icon" id="icon-book">
+                        <use xlink:href="#icon-book"></use>
+                      </svg>
+                    Content Library</a></li>
+                  <li><a href="https://blog.docker.com" target="_blank" class="dropdown-item">
+                      <svg class="list-icon" id="icon-blog">
+                        <use xlink:href="#icon-blog"></use>
+                      </svg>
+                   Blog</a></li>
+                  <li><a href="/resources/what-container" class="dropdown-item">
+                      <svg class="list-icon" id="icon-box">
+                        <use xlink:href="#icon-box"></use>
+                      </svg>
+                     What is a Container</a></li>
+                  <li><a href="https://events.docker.com/" target="_blank" class="dropdown-item">
+                      <svg class="list-icon" id="icon-bolt">
+                        <use xlink:href="#icon-bolt"></use>
+                      </svg>
+                   Events</a></li>
+                  <li><a href="/docker-community" class="dropdown-item">
+                      <svg class="list-icon" id="icon-world">
+                        <use xlink:href="#icon-world"></use>
+                      </svg>
+                   Community</a></li>
+                  <li><a href="https://forums.docker.com/" target="_blank" class="dropdown-item">
+                      <svg class="list-icon" id="icon-pen">
+                        <use xlink:href="#icon-pen"></use>
+                      </svg>
+                   Forums</a></li>
+                  <li><a href="https://docs.docker.com/" target="_blank" class="dropdown-item">
+                      <svg class="list-icon" id="icon-docs">
+                        <use xlink:href="#icon-docs"></use>
+                      </svg>
+                    Docs</a></li>
+                  <li><a href="https://training.docker.com/" target="_blank" class="dropdown-item">
+                      <svg class="list-icon" id="icon-play">
+                        <use xlink:href="#icon-play"></use>
+                      </svg>
+                    Training</a></li>
+                  <li><a href="/open-source" class="dropdown-item">
+                      <svg class="list-icon" id="icon-opensource">
+                        <use xlink:href="#icon-opensource"></use>
+                      </svg>
+                   Open Source</a></li>
+                  <li><a href="https://success.docker.com/" target="_blank" class="dropdown-item">
+                      <svg class="list-icon" id="icon-award">
+                        <use xlink:href="#icon-award"></use>
+                      </svg>
+                   Customer Success Portal</a></li>
+                </ul>
+              </div>  
+            </div>
+          </li>
+        </ul>
+        <div class="secondary-nav d-lg-none">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="https://success.docker.com/support">Product Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/company">Company</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/partners">Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/company/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="action-wrap my-2 my-md-0">
+          <a href="/get-started" class="btn">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
